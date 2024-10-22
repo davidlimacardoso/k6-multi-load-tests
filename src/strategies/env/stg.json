@@ -1,7 +1,8 @@
 [
     {
         "host": {
-            "fakestore" : "https://fakestoreapi.com"
+            "fakestore" : "https://fakestoreapi.com",
+            "jsonplaceholder" : "https://jsonplaceholder.typicode.com"
         },
         "load": {
             "fakestore_product_to_cart": {
@@ -21,6 +22,30 @@
                 "maxVUs": 5
             },
             "fakestore_user_login": {
+                "executor": "constant-arrival-rate",
+                "timeUnit": "1s",
+                "duration": "9s",
+                "rate": 2,
+                "preAllocatedVUs": 3,
+                "maxVUs": 5
+            },
+            "jsonplaceholder_get_post": {
+                "executor": "constant-arrival-rate",
+                "timeUnit": "1s",
+                "duration": "9s",
+                "rate": 2,
+                "preAllocatedVUs": 3,
+                "maxVUs": 5
+            },
+            "jsonplaceholder_del_post": {
+                "executor": "constant-arrival-rate",
+                "timeUnit": "1s",
+                "duration": "9s",
+                "rate": 2,
+                "preAllocatedVUs": 3,
+                "maxVUs": 5
+            },
+            "jsonplaceholder_simulate_user_post": {
                 "executor": "constant-arrival-rate",
                 "timeUnit": "1s",
                 "duration": "9s",
@@ -55,6 +80,42 @@
                 ]
             },
             "fakestore_user_login": {
+                "executor": "ramping-arrival-rate",
+                "timeUnit": "1s",
+                "startRate": 1,
+                "preAllocatedVUs": 5,
+                "maxVUs": 10,
+                "stages": [
+                    { "target": 1, "duration": "2s"},
+                    { "target": 5, "duration": "4s"},
+                    { "target": 0, "duration": "2s"}
+                ]
+            },
+            "jsonplaceholder_get_post": {
+                "executor": "ramping-arrival-rate",
+                "timeUnit": "1s",
+                "startRate": 1,
+                "preAllocatedVUs": 5,
+                "maxVUs": 10,
+                "stages": [
+                    { "target": 1, "duration": "2s"},
+                    { "target": 5, "duration": "4s"},
+                    { "target": 0, "duration": "2s"}
+                ]
+            },
+            "jsonplaceholder_del_post": {
+                "executor": "ramping-arrival-rate",
+                "timeUnit": "1s",
+                "startRate": 1,
+                "preAllocatedVUs": 5,
+                "maxVUs": 10,
+                "stages": [
+                    { "target": 1, "duration": "2s"},
+                    { "target": 5, "duration": "4s"},
+                    { "target": 0, "duration": "2s"}
+                ]
+            },
+            "jsonplaceholder_simulate_user_post": {
                 "executor": "ramping-arrival-rate",
                 "timeUnit": "1s",
                 "startRate": 1,
