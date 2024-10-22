@@ -15,7 +15,6 @@
         "JsonplaceholderGetPost": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/jsonplaceholder/jsonplaceholder_get_post.js $OUTPUT",
         "JsonplaceholderDelPost": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/jsonplaceholder/jsonplaceholder_del_post.js $OUTPUT",
         "JsonplaceholderSimulatePost": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/jsonplaceholder/jsonplaceholder_simulate_user_post.js $OUTPUT"
-
     },
 
     "repository": {
