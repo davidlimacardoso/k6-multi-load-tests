@@ -1,0 +1,29 @@
+{
+    "name": "k6-multi-load-tests",
+    "version": "1.0.0",
+    "description": "Project of load tests with K6",
+    "scripts": {
+
+        "k6Node1": "npm run fakeUserLogin & npm run fakeProductToCart",
+        "k6Node2": "npm run fakeAddNewUser",
+
+        "fakeProductToCart": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/fakestore/fakestore_product_to_cart.js $OUTPUT",
+        "fakeAddNewUser": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/fakestore/fakestore_new_user.js $OUTPUT",
+        "fakeUserLogin": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/fakestore/fakestore_user_login.js $OUTPUT"
+    
+    },
+
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/davidlimacardoso/k6-multi-load-tests.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/davidlimacardoso/k6-multi-load-tests/issues"
+    },
+    "homepage": "https://github.com/davidlimacardoso/k6-multi-load-tests#readme",
+    "dependencies": {
+      "k6": "^0.0.0"
+    }
+}

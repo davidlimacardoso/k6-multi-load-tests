@@ -1,0 +1,71 @@
+[
+    {
+        "host": {
+            "fakestore" : "https://fakestoreapi.com"
+        },
+        "load": {
+            "fakestore_product_to_cart": {
+                "executor": "constant-arrival-rate",
+                "timeUnit": "1s",
+                "duration": "15s",
+                "rate": 3,
+                "preAllocatedVUs": 5,
+                "maxVUs": 5
+            },
+          "fakestore_new_user": {
+                "executor": "constant-arrival-rate",
+                "timeUnit": "1s",
+                "duration": "15s",
+                "rate": 3,
+                "preAllocatedVUs": 5,
+                "maxVUs": 5
+            },
+            "fakestore_user_login": {
+                "executor": "constant-arrival-rate",
+                "timeUnit": "1s",
+                "duration": "15s",
+                "rate": 2,
+                "preAllocatedVUs": 3,
+                "maxVUs": 5
+            }
+        },
+        "ramp": {
+            "fakestore_product_to_cart": {
+                "executor": "ramping-arrival-rate",
+                "timeUnit": "1s",
+                "startRate": 1,
+                "preAllocatedVUs": 5,
+                "maxVUs": 15,
+                "stages": [
+                    { "target": 1, "duration": "3s"},
+                    { "target": 5, "duration": "9s"},
+                    { "target": 0, "duration": "3s"}
+                ]
+            },
+            "fakestore_new_user": {
+                "executor": "ramping-arrival-rate",
+                "timeUnit": "1s",
+                "startRate": 1,
+                "preAllocatedVUs": 5,
+                "maxVUs": 10,
+                "stages": [
+                    { "target": 1, "duration": "3s"},
+                    { "target": 5, "duration": "9s"},
+                    { "target": 0, "duration": "3s"}
+                ]
+            },
+            "fakestore_user_login": {
+                "executor": "ramping-arrival-rate",
+                "timeUnit": "1s",
+                "startRate": 1,
+                "preAllocatedVUs": 5,
+                "maxVUs": 10,
+                "stages": [
+                    { "target": 1, "duration": "3s"},
+                    { "target": 5, "duration": "9s"},
+                    { "target": 0, "duration": "3s"}
+                ]
+            }
+        }
+    }
+]
