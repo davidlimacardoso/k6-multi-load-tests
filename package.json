@@ -6,11 +6,16 @@
 
         "k6Node1": "npm run fakeUserLogin & npm run fakeProductToCart",
         "k6Node2": "npm run fakeAddNewUser",
+        "k6Node3": "npm run JsonplaceholderGetPost & npm run JsonplaceholderDelPost",
+        "k6Node4": "npm run JsonplaceholderSimulatePost",
 
         "fakeProductToCart": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/fakestore/fakestore_product_to_cart.js $OUTPUT",
         "fakeAddNewUser": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/fakestore/fakestore_new_user.js $OUTPUT",
-        "fakeUserLogin": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/fakestore/fakestore_user_login.js $OUTPUT"
-    
+        "fakeUserLogin": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/fakestore/fakestore_user_login.js $OUTPUT",
+        "JsonplaceholderGetPost": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/jsonplaceholder/jsonplaceholder_get_post.js $OUTPUT",
+        "JsonplaceholderDelPost": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/jsonplaceholder/jsonplaceholder_del_post.js $OUTPUT",
+        "JsonplaceholderSimulatePost": "ENV=$npm_config_env STRATEGY=$npm_config_strategy TOKEN=$npm_config_token K6_NO_USAGE_REPORT=true k6 run src/scenarios/jsonplaceholder/jsonplaceholder_simulate_user_post.js $OUTPUT"
+
     },
 
     "repository": {
