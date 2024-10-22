@@ -15,14 +15,14 @@ This project is designed to perform load testing on different API endpoints, par
 
 1. Clone the repository:
 ```bash
-git clone your-repository-url
-cd k6-load-tests
+git clone https://github.com/davidlimacardoso/k6-multi-load-tests.git
+cd k6-multi-load-tests.git
 
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd k6-load-tests
+cd k6-multi-load-tests.git
 
 ```
 3. Install dependencies:
