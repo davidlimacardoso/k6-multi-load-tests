@@ -17,18 +17,23 @@ This project is designed to perform load testing on different API endpoints, par
 ```bash
 git clone https://github.com/davidlimacardoso/k6-multi-load-tests.git
 cd k6-multi-load-tests.git
-
 ```
 
 2. Navigate to the project directory:
 ```bash
 cd k6-multi-load-tests.git
-
 ```
 3. Install dependencies:
 ```bash
 npm install
+```
 
+## Docker Image
+You can to use my image [docker here](https://hub.docker.com/r/davidlimacd/k6-node-alpine) too.
+
+1. Run Docker image
+```bash
+docker run -it davidlimacd/k6-node-alpine:latest
 ```
 
 ## Available Scripts
