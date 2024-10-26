@@ -49,4 +49,12 @@ export default class FactoryFakestore {
         }
 
     }
+
+    getCartProductPayload() {
+        return {
+            "userId": 1,
+            "date": "2020-03-02",
+            "products": [{"productId": 1, "quantity": 3}]
+        }
+    }
 }
