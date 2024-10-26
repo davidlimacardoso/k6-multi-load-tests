@@ -20,4 +20,4 @@ phases:
   build:
     commands:
     - echo $TYPE
-    - npm run $TYPE --env=stg --strategy=ramp
+    - npm run $TYPE --env=dev --strategy=load
