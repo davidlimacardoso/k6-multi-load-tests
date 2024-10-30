@@ -26,4 +26,4 @@ services:
       - influxdb
     environment:
       - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=adminTester@K6 
+      - GF_SECURITY_ADMIN_PASSWORD=adminTester@K6
