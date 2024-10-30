@@ -8,7 +8,7 @@
             "fakestore_product_to_cart": {
                 "executor": "constant-arrival-rate",
                 "timeUnit": "1s",
-                "duration": "15s",
+                "duration": "60s",
                 "rate": 3,
                 "preAllocatedVUs": 5,
                 "maxVUs": 5
@@ -16,7 +16,7 @@
           "fakestore_new_user": {
                 "executor": "constant-arrival-rate",
                 "timeUnit": "1s",
-                "duration": "15s",
+                "duration": "60s",
                 "rate": 3,
                 "preAllocatedVUs": 5,
                 "maxVUs": 5
@@ -24,7 +24,7 @@
             "fakestore_user_login": {
                 "executor": "constant-arrival-rate",
                 "timeUnit": "1s",
-                "duration": "15s",
+                "duration": "60s",
                 "rate": 2,
                 "preAllocatedVUs": 3,
                 "maxVUs": 5
@@ -32,7 +32,7 @@
             "jsonplaceholder_get_post": {
                 "executor": "constant-arrival-rate",
                 "timeUnit": "1s",
-                "duration": "15s",
+                "duration": "60s",
                 "rate": 2,
                 "preAllocatedVUs": 3,
                 "maxVUs": 5
@@ -40,7 +40,7 @@
             "jsonplaceholder_del_post": {
                 "executor": "constant-arrival-rate",
                 "timeUnit": "1s",
-                "duration": "15s",
+                "duration": "60s",
                 "rate": 2,
                 "preAllocatedVUs": 3,
                 "maxVUs": 5
@@ -48,7 +48,7 @@
             "jsonplaceholder_simulate_user_post": {
                 "executor": "constant-arrival-rate",
                 "timeUnit": "1s",
-                "duration": "15s",
+                "duration": "60s",
                 "rate": 2,
                 "preAllocatedVUs": 3,
                 "maxVUs": 5
@@ -62,9 +62,9 @@
                 "preAllocatedVUs": 5,
                 "maxVUs": 15,
                 "stages": [
-                    { "target": 1, "duration": "3s"},
-                    { "target": 5, "duration": "9s"},
-                    { "target": 0, "duration": "3s"}
+                    { "target": 1, "duration": "10s"},
+                    { "target": 5, "duration": "40s"},
+                    { "target": 0, "duration": "10s"}
                 ]
             },
             "fakestore_new_user": {
@@ -74,9 +74,9 @@
                 "preAllocatedVUs": 5,
                 "maxVUs": 10,
                 "stages": [
-                    { "target": 1, "duration": "3s"},
-                    { "target": 5, "duration": "9s"},
-                    { "target": 0, "duration": "3s"}
+                    { "target": 1, "duration": "10s"},
+                    { "target": 5, "duration": "40s"},
+                    { "target": 0, "duration": "10s"}
                 ]
             },
             "fakestore_user_login": {
@@ -86,9 +86,9 @@
                 "preAllocatedVUs": 5,
                 "maxVUs": 10,
                 "stages": [
-                    { "target": 1, "duration": "3s"},
-                    { "target": 5, "duration": "9s"},
-                    { "target": 0, "duration": "3s"}
+                    { "target": 1, "duration": "10s"},
+                    { "target": 5, "duration": "40s"},
+                    { "target": 0, "duration": "10s"}
                 ]
             },
             "jsonplaceholder_get_post": {
@@ -98,9 +98,9 @@
                 "preAllocatedVUs": 5,
                 "maxVUs": 10,
                 "stages": [
-                    { "target": 1, "duration": "3s"},
-                    { "target": 5, "duration": "9s"},
-                    { "target": 0, "duration": "3s"}
+                    { "target": 1, "duration": "10s"},
+                    { "target": 5, "duration": "40s"},
+                    { "target": 0, "duration": "10s"}
                 ]
             },
             "jsonplaceholder_del_post": {
@@ -110,9 +110,9 @@
                 "preAllocatedVUs": 5,
                 "maxVUs": 10,
                 "stages": [
-                    { "target": 1, "duration": "3s"},
-                    { "target": 5, "duration": "9s"},
-                    { "target": 0, "duration": "3s"}
+                    { "target": 1, "duration": "10s"},
+                    { "target": 5, "duration": "40s"},
+                    { "target": 0, "duration": "10s"}
                 ]
             },
             "jsonplaceholder_simulate_user_post": {
@@ -122,9 +122,9 @@
                 "preAllocatedVUs": 5,
                 "maxVUs": 10,
                 "stages": [
-                    { "target": 1, "duration": "3s"},
-                    { "target": 5, "duration": "9s"},
-                    { "target": 0, "duration": "3s"}
+                    { "target": 1, "duration": "10s"},
+                    { "target": 5, "duration": "40s"},
+                    { "target": 0, "duration": "10s"}
                 ]
             }
         }
