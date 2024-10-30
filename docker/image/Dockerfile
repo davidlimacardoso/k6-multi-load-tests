@@ -6,7 +6,8 @@ RUN apk update && \
     apk add --no-cache \
     curl ca-certificates \
     nodejs \
-    npm && \
+    npm \
+    git && \
     update-ca-certificates
 
 # Download and install k6
