@@ -8,7 +8,7 @@ module "asm" {
   secret_value = [
     {
       key   = "OUTPUT"
-      value = "--out influxdb=http://grafana.dev.k6testload.in:8086/k6"
+      value = "--out influxdb=http://grafana.${var.env}.k6testload.in:8086/k6"
     },
     {
       key   = "TOKEN"
@@ -197,6 +197,13 @@ module "ec2-instance" {
 }
 
 ##################################################################################
+# Create ACM certificate SSL 
+module "acm" {
+  source      = "./modules/acm"
+  domain_name = "*.jupter.xyz"
+}
+
+##################################################################################
 # Create internal hosted domain name to be used as OUTPUT throught of the K6 by Secrets Manager
 module "route53" {
   source  = "./modules/route53"
@@ -208,7 +215,7 @@ module "route53" {
     vpc_id = var.vpc_id
     records = [
       {
-        name    = "grafana.dev"
+        name    = "grafana.${var.env}"
         type    = "A"
         ttl     = 300
         records = [module.ec2-instance.ec2_instance.grafana-web.private_ip]
@@ -250,4 +257,5 @@ module "elb" {
   instance_id       = module.ec2-instance.ec2_instance.grafana-web.id
   lb_security_group = [module.sgs.id.elb_sg]
   subnets           = var.public_subnet_ids
+  certificate       = module.acm.certificate
 }
