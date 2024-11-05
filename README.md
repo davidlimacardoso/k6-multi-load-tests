@@ -86,3 +86,6 @@ k6-load-tests/
         │   └── stg.json
         └── strategy.js
 ```
+## Licence
+
+[MIT](https://github.com/davidlimacardoso/k6-multi-load-tests/blob/main/LICENSE)
