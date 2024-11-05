@@ -136,13 +136,26 @@ terraform init
 
 5. Plan the infrastructure:
 ```bash
-terraform plan
+terraform plan -var-file="dev.tfvars"
 ```
 6. Apply the configuration:
 
 ```bash
-terraform apply
+terraform apply -var-file="dev.tfvars"
 ```
+# Grafana EC2
+The initial password and username is located this repository in `/docker/grafana/docker-compose.yml` below `environment` variables.
+
+The Grafana instance private ip is attached to the internal domain `grafana.dev.k6testload.in` through Route53.
+
+The K6 send his logs by $OUTPUT environment, the $OUTPUT is loaded by Codebuild enviroment that is loaded by Secrets Manager (ASM) value of OUTPUT key.
+```hcl
+{
+  key   = "OUTPUT"
+  value = "--out influxdb=http://grafana.dev.k6testload.in:8086/k6"
+},
+```
+
 # Outputs
 
 The project outputs include:
