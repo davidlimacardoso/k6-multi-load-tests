@@ -22,3 +22,8 @@ output "elb" {
   description = "Load Balancer DNS name"
   value       = module.elb
 }
+
+output "acm" {
+  description = "ACM certificate"
+  value       = module.acm
+}
