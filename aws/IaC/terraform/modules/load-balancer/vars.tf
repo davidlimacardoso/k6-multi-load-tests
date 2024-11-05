@@ -65,3 +65,8 @@ variable "project" {
   type        = string
   description = "Project name"
 }
+
+variable "certificate" {
+  type        = string
+  description = "ACM SSL Certificate ARN"
+}
