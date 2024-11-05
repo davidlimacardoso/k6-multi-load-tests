@@ -1,0 +1,23 @@
+version: 0.2
+
+batch:
+  fast-fail: false
+  build-list:
+    - identifier: k6Node1
+      env:
+        variables:
+          TYPE: k6Node1
+      ignore-failure: true
+        
+    - identifier: k6Node2
+      env:
+        variables:
+          TYPE: k6Node2
+      ignore-failure: true
+          
+
+phases:
+  build:
+    commands:
+    - echo $TYPE
+    - npm run $TYPE --env=stg --strategy=ramp
